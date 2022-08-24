@@ -2,8 +2,6 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 interface PropsModel {
   mode?: 'light' | 'dark';
-  primaryColor?: string;
-  secondaryColor?: string;
 }
 
 declare module '@mui/material/styles' {
@@ -23,14 +21,7 @@ export const setTheme = ({ mode = 'light' }: PropsModel) => {
     components: {
       MuiCssBaseline: {
         styleOverrides: {
-          html: {
-            boxSizing: 'border-box',
-            fontSize: '16px',
-            scrollBehavior: 'smooth',
-          },
           body: {
-            overflowX: 'hidden',
-            margin: 0,
             scrollbarColor: mode === 'dark' ? '#2E2E31' : '#f4f7fd transparent',
             '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
               backgroundColor: 'transparent',
